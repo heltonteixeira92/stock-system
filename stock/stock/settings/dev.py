@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'products',
     'stock',
 
-    #3rd
+    # 3rd
     'django_extensions',
 ]
 
