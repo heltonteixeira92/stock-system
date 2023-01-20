@@ -4,6 +4,8 @@ from products.models import Product
 
 from products.models import Category
 
+from stock.models import Stock
+
 fake = Faker()
 
 
@@ -23,3 +25,11 @@ class ProductFactory(factory.django.DjangoModelFactory):
     store_price = 1.99
     sale_price = 2.99
     category = factory.SubFactory(CategoryFactory)
+
+
+class StockFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = Stock
+
+    product = factory.SubFactory(ProductFactory)
+    quantity = 10

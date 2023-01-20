@@ -2,5 +2,5 @@ import pytest
 
 
 @pytest.mark.django_db
-def test_stock_model_str(product):
-    assert product.__str__() == 'embalagem grande'
+def test_stock_model_str(stock):
+    assert stock.__str__() == '10 embalagem grande available'
