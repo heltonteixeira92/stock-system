@@ -1,11 +1,18 @@
 import pytest
 from pytest_factoryboy import register
 
-from tests.factories import ProductFactory, StockFactory, CategoryFactory
+from tests.factories import ProductFactory, StockFactory, CategoryFactory, UserFactory
 
 register(ProductFactory)
 register(StockFactory)
 register(CategoryFactory)
+register(UserFactory)
+
+
+@pytest.fixture
+def user(db, user_factory):
+    user = user_factory.create()
+    return user
 
 
 @pytest.fixture

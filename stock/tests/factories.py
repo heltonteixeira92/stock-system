@@ -1,12 +1,20 @@
 import factory
 from faker import Faker
-from products.models import Product
 
-from products.models import Category
-
+from products.models import Product, Category
 from stock.models import Stock
+from user.models import User
 
 fake = Faker()
+
+
+class UserFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = User
+
+    first_name = fake.name()
+    email = fake.email()
+    password = fake.password()
 
 
 class CategoryFactory(factory.django.DjangoModelFactory):
